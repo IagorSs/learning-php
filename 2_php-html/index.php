@@ -1,5 +1,6 @@
 <?php
-    require "functions.php";
+    require "functions/fruits.php";
+    require "functions/clients.php";
 
     $title = 'Título de mentirinha!';
     $mensagem = "Olá, seja bem-vindo ao meu site!"
