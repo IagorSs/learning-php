@@ -1,10 +1,10 @@
 <?php
 
-require 'functions/clients.php';
+require '../functions/clients.php';
 
 $name = $_POST['name'];
 $age = $_POST['age'];
 
 insertClient($name, $age);
 
-header("Location: ./index.php");
+header("Location: ../index.php");

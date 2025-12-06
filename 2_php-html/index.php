@@ -59,7 +59,7 @@
         </tbody>
     </table>
 
-    <form action="./insert-new-client.php" method="post">
+    <form action="./pages/insert-new-client.php" method="post">
         <input type="text" name="name" id="input-name" placeholder="Insira seu nome">
         <input type="number" name="age" id="input-age" placeholder="Insira sua idade">
 
