@@ -11,8 +11,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/index.css">
     <title><?php echo $title; ?></title>
 </head>
+
 <body>
     <h1>
         <?php echo $mensagem; ?>
@@ -39,10 +41,23 @@
     </form>
 
     <hr>
-    <?php foreach(getClients() as $client) : ?>
-        <strong><?php echo $client['id'] ?></strong>: <?php echo $client['name'] . ' (' . $client['age'] . ')' ?>
-        <hr>
-    <?php endforeach; ?>
+
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Idade</th>
+        </thead>
+        <tbody></tbody>
+            <?php foreach(getClients() as $client) : ?>
+                <tr>
+                    <td><?php echo $client['id'] ?></td>
+                    <td><?php echo $client['name'] ?></td>
+                    <td><?php echo $client['age'] ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
 
     <form action="./insert-new-client.php" method="post">
         <input type="text" name="name" id="input-name" placeholder="Insira seu nome">
