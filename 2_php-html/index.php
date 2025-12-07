@@ -1,5 +1,4 @@
 <?php
-    require "functions/fruits.php";
     require "functions/clients.php";
 
     $title = 'Título de mentirinha!';
@@ -20,26 +19,6 @@
         <?php echo $mensagem; ?>
     </h1>
 
-
-    <form action="" method="post">
-        <label for="age-selector">Selecione uma idade</label>
-        <select name="" id="age-selector">
-            <option value="">Selecione uma opção</option>
-            <?php for ($i = 1; $i <= 100; $i++) : ?>
-                <option value="<?php echo $i ?>"><?php echo $i . ' ano' . ($i >= 2 ? 's' : '') ?></option>
-            <?php endfor; ?>
-        </select>
-
-        </br>
-
-        
-        <label for="fruits-selector">Selecione uma fruta</label>
-        <select name="" id="fruits-selector">
-            <option value="">Selecione uma opção</option>
-            <?php getFruits() ?>
-        </select>
-    </form>
-
     <hr>
 
     <table>
@@ -54,7 +33,7 @@
                 <tr>
                     <td><?php echo $client['id'] ?></td>
                     <td><?php echo $client['name'] ?></td>
-                    <td><?php echo $client['age'] ?></td>
+                    <td><?php echo $client['age'] . ' ano' . ($client['age'] >= 2 ? 's' : '') ?></td>
                     <td>
                         <a href="./pages/edit-client.php?id=<?php echo $client['id'] ?>">Editar</a>
                         <a href="./pages/delete-client.php?id=<?php echo $client['id'] ?>">Deletar</a>
@@ -64,11 +43,15 @@
         </tbody>
     </table>
 
-    <form action="./pages/insert-new-client.php" method="post">
-        <input type="text" name="name" id="input-name" placeholder="Insira seu nome">
-        <input type="number" name="age" id="input-age" placeholder="Insira sua idade">
+    <hr>
 
-        <button type="submit">Enviar</button>
+    <h2>Criar novo cliente</h2>
+
+    <form action="./pages/insert-new-client.php" method="post">
+        <input type="text" name="name" id="input-name" placeholder="Nome">
+        <input type="number" name="age" id="input-age" placeholder="Idade">
+
+        <button type="submit">Criar</button>
     </form>
 </body>
 </html>
