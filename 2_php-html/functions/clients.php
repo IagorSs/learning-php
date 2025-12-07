@@ -36,3 +36,17 @@ function getClient($id): mixed {
 
     return $client;
 }
+
+function updateClient(
+    int $id,
+    string $name,
+    int $age
+): void {
+    $pdo = connect();
+
+    $stmt = $pdo->prepare('UPDATE clients SET name = :name, age = :age WHERE id = :id');
+    $stmt->bindValue(':id', $id);
+    $stmt->bindValue(':name', $name);
+    $stmt->bindValue(':age', $age);
+    $stmt->execute();
+}
