@@ -57,6 +57,7 @@
                     <td><?php echo $client['age'] ?></td>
                     <td>
                         <a href="./pages/edit-client.php?id=<?php echo $client['id'] ?>">Editar</a>
+                        <a href="./pages/delete-client.php?id=<?php echo $client['id'] ?>">Deletar</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
