@@ -24,3 +24,15 @@ function insertClient(
     $stmt->bindValue(':age', $age);
     $stmt->execute();
 }
+
+function getClient($id): mixed {
+    $pdo = connect();
+
+    $stmt = $pdo->prepare('SELECT * FROM clients WHERE id = :id');
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+
+    $client = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $client;
+}
