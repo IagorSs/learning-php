@@ -47,6 +47,7 @@
             <th>ID</th>
             <th>Nome</th>
             <th>Idade</th>
+            <th>Ações</th>
         </thead>
         <tbody></tbody>
             <?php foreach(getClients() as $client) : ?>
@@ -54,6 +55,9 @@
                     <td><?php echo $client['id'] ?></td>
                     <td><?php echo $client['name'] ?></td>
                     <td><?php echo $client['age'] ?></td>
+                    <td>
+                        <a href="./pages/edit-client.php?id=<?php echo $client['id'] ?>">Editar</a>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

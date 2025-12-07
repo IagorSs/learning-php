@@ -1,0 +1,11 @@
+label {
+    display: block;
+}
+
+div.input-group {
+    margin: 8px 0;
+}
+
+input[readonly] {
+    background-color: #b6b6b6;
+}
