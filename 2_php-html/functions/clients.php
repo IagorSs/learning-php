@@ -50,3 +50,11 @@ function updateClient(
     $stmt->bindValue(':age', $age);
     $stmt->execute();
 }
+
+function deleteClient(int $id): void {
+    $pdo = connect();
+
+    $stmt = $pdo->prepare('DELETE FROM clients WHERE id = :id');
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+}
