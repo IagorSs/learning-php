@@ -3,9 +3,9 @@
 function connect(): PDO {
     try {
         $pdo = new PDO(
-            'mysql:host=localhost;dbname=teste;charset=utf8',
+            'mysql:host=mysql-environment;dbname=sampledb;charset=utf8',
             'root',
-            ''
+            'rootpassword'
         );
 
         return $pdo;
